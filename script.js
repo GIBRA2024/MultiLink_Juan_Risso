@@ -15,3 +15,24 @@ END:VCARD`;
     a.click();
     document.body.removeChild(a);
 }
+
+
+// Función para rastrear clics en botones
+function trackButtonClick(buttonName) {
+    gtag('event', 'click', {
+        'event_category': 'Botón',
+        'event_label': buttonName
+    });
+}
+
+// Añadir el evento al hacer clic en los botones
+document.querySelectorAll('.social-buttons a').forEach(button => {
+    button.addEventListener('click', function() {
+        trackButtonClick(button.innerText); // Enviar el nombre del botón como etiqueta
+    });
+});
+
+document.querySelector('button[onclick="descargarContacto()"]').addEventListener('click', function() {
+    trackButtonClick('Guardar Contacto');
+});
+
