@@ -4,6 +4,7 @@ VERSION:3.0
 FN:Juan Sebastian Risso
 TEL:3225725739
 EMAIL: jsrisso1218@gmail.com 
+EMAIL;type=work: gerencia@gibracompany.com
 END:VCARD`;
 
     const blob = new Blob([vcardData], { type: 'text/vcard' });
